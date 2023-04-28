@@ -70,6 +70,13 @@ body {
     background-color: #00d6ef;
 }
 
+.header {    
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
 .header .user {
     width: 22px;
     height: 25px;
@@ -79,6 +86,11 @@ body {
 .header .user img {
     width: 100%;
     display: block;
+}
+
+.header .bars {
+    font-size: 36px;
+    display: none;
 }
 
 .hero {
@@ -108,6 +120,7 @@ body {
     text-align: center;
     color: #fff;
 }
+
 .hero .text_box h2 {
     font-size: 60px;
 }
@@ -141,3 +154,84 @@ body {
     align-items: center;
     justify-content: space-between;
 }
+
+
+@media (max-width: 576px) { 
+    .header {    
+        padding: 0 16px;
+    }
+
+    .header .user {
+        display: none;
+    }
+
+    .header .bars {
+        display: block;
+        z-index: 1;
+    }
+ 
+    .gnb {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        background-color: white;
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        padding-top: 100px;
+        transition: all 0.3s;
+    }
+
+    .gnb.active {
+        left: 0;
+    }
+
+    .gnb li a {    
+        text-align: center;
+        font-size: 24px;
+    }
+    
+    .gnb li a:hover::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background-color: #00d6ef;
+    }
+       
+    .gnb li.on a {
+        color: #00d6ef;
+    }
+    
+    .gnb li.on a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background-color: #00d6ef;
+    }
+
+    .hero {
+        background-size: cover;
+    }
+
+    .hero .text_box h2 {
+        font-size: 26px;
+    }
+    
+    .hero .text_box p {
+        font-size:8px;
+    }
+
+    .hero .social {
+        display: none;
+    }
+
+ }
+
